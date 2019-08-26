@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UI.TransactionDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/rl_header">
+
+        <RelativeLayout
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:id="@+id/rl_back"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:id="@+id/iv_back"
+                android:src="@drawable/icon_back_arrow"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/tv_total_docks"
+                android:id="@+id/tv_title"
+                android:text="Transaction Details"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/green"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_header"
+        android:orientation="vertical"
+        android:id="@+id/ll_data"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/blue"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:id="@+id/tv_transaction_type"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:text="LOAD"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="ID"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_id"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="Transporter"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_transporter"
+                    android:layout_marginBottom="20dp"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="DATE"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_date"
+                    android:layout_marginBottom="20dp"
+                    android:focusable="false"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="SRC"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_source"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="DST"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_destiniation"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="Driver No."
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_driver_number"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="Vehicle"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_vehicle"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="2dp"
+                android:paddingLeft="5dp"
+                android:visibility="invisible"
+                android:background="@drawable/rounded_rect_white_smoke"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/grey"
+                    android:text="ETA"
+                    />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tv_total_docks"
+                    android:textColor="@color/black"
+                    android:id="@+id/et_eta"
+                    android:focusable="false"
+                    android:layout_marginBottom="20dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/ll_current_status"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/ll_data">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Current Status"
+            android:textSize="@dimen/tv_total_docks"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/rl_spinner_current_status"
+            android:background="@drawable/rounded_rect_blue">
+
+            <Spinner
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:id="@+id/spinner_current_status"
+                android:backgroundTint="@color/white"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_timer"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/ll_current_status"
+        android:layout_marginBottom="5dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/icon_timer"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/tv_warehouse_location"
+            android:id="@+id/tv_timer"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/ll_timer"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_text_dock_assignment"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/purple"
+            android:textSize="@dimen/tv_total_docks"
+            android:text="Dock Assignment Details"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/green"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:id="@+id/ll_dock_details"
+        android:layout_below="@id/ll_text_dock_assignment"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="2dp"
+            android:paddingLeft="5dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_rect_white_smoke"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_total_docks"
+                android:textColor="@color/grey"
+                android:text="Dock"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_warehouse_id"
+                android:textColor="@color/black"
+                android:id="@+id/tv_dock_name"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/rounded_rect_white_smoke"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_total_docks"
+                android:textColor="@color/grey"
+                android:text="Slot"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_warehouse_id"
+                android:textColor="@color/black"
+                android:id="@+id/tv_slot"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/rounded_rect_white_smoke"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_total_docks"
+                android:textColor="@color/grey"
+                android:text="Period"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tv_warehouse_id"
+                android:textColor="@color/black"
+                android:id="@+id/tv_duration"
+                android:layout_marginBottom="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/ll_dock_details"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@drawable/rounded_rect_purple"
+            android:text="Reschedule"
+            android:textSize="@dimen/tv_total_docks"
+            android:id="@+id/btn_reschedule"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/rounded_rect_purple"
+            android:text="Cancel Assignment"
+            android:textSize="@dimen/tv_total_docks"
+            android:id="@+id/btn_cancel_assignment"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

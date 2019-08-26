@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7541ee</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="purple">#7541ee</color>
+    <color name="purple_dock_occupied">#CBBBF9</color>
+    <color name="lavender">#d7ccfa</color>
+    <color name="light_purple">#A98EE9</color>
+    <color name="green">#44bf80</color>
+    <color name="green_up_arrow">#28AE14</color>
+    <color name="red">#f1816d</color>
+    <color name="red_down_arrow">#DC0C0C</color>
+    <color name="blue">#2361d2</color>
+    <color name="blue_graph">#A3BEFE</color>
+    <color name="alice_blue">#eaf7fb</color>
+    <color name="grey">#868686</color>
+    <color name="white_smoke">#f4f5f6</color>
+    <color name="gold">#f6991f</color>
+    <color name="powder_blue">#c9d6f4</color>
+    <color name="royal_blue">#487bf1</color>
+    <color name="dark_orange">#FF7052</color>
+    <color name="light_orange">#fde6e2</color>
+    <color name="docks_green">#3FB6DC</color>
+    <color name="table_view_background">#E0E1E2</color>
+    <color name="red_booked_slot">#DB0606</color>
+    <color name="light_red_booked_slot">#F0A8A8</color>
+    <color name="circle_light_red_booked_slot">#F8CDCD</color>
+    <color name="darkslategray">#373e4a</color>
+
+
+    <color name="selected_background_color">#15a4fa</color>
+    <color name="unselected_background_color">#1c324a</color>
+    <color name="shadow_background_color">#28415f</color>
+    <color name="unselected_header_background_color">#1f3650</color>
+
+    <color name="unselected_text_color">#537095</color>
+    <color name="selected_text_color">#ffffff</color>
+    <color name="separator_color">#273e5b</color>
+
+    <color name="popup_menu_item_text_color">#88a5c9</color>
+
+    <color name="female_icon_color">#e9515f</color>
+    <color name="male_icon_color">#f28944</color>
+</resources>

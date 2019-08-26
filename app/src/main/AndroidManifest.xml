@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.intutrack.intudock">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".UI.IntuApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/c_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/c_logo"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".UI.AddTransactionActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".UI.SelectTransactionActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".UI.SplashScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UI.TransactionDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.CalendarViewActivity" />
+        <activity android:name=".UI.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UI.DockTransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UI.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ee35c8e9c150688d88b79e40e927b4918ce5d7e8" />
+    </application>
+
+</manifest>

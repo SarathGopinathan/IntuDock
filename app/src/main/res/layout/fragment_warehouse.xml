@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/icon_error"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/iv_empty"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_content">
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/spinner_city"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+        </Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_city"
+            android:layout_marginStart="30dp"
+            android:textSize="@dimen/select_warehouse"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/text_warehouse"
+            android:id="@+id/txt_select"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:id="@+id/rl_search"
+            android:layout_below="@+id/txt_select"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/rounded_rect_grey">
+
+            <ImageButton
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/icon_search"
+                android:id="@+id/btn_search"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/btn_search"
+                android:background="@color/transparent"
+                android:layout_marginRight="10dp"
+                android:hint="@string/hint_search"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:lines="1"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/et_search"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/et_search"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/circle_white"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/txt_select"
+            android:elevation="2dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/rl_icon_date">
+
+            <ImageButton
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/icon_date"
+                android:id="@+id/ib_calendar"/>
+
+        </RelativeLayout>
+
+        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:textColorNormal="@color/black"
+            app:textColorSelected="@color/black"
+            android:background="@color/white"
+            android:layout_below="@id/rl_icon_date"
+            android:elevation="0dp"
+            app:selectorColor="@color/transparent" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/calendarView"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:id="@+id/swipe_refresh_warehouse">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:visibility="visible"
+                android:id="@+id/rv_warehouses">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/icon_error"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/calendarView"
+            android:visibility="gone"
+            android:id="@+id/iv_no_data"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_calendar">
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/spinner_city"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp">
+        </Spinner>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner_city"
+            android:layout_marginStart="30dp"
+            android:textSize="@dimen/select_warehouse"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/text_warehouse"
+            android:id="@+id/txt_select"
+            android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:layout_width="125dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:id="@+id/spinner_warehouse"
+                android:backgroundTint="@color/blue">
+            </Spinner>
+
+            <RelativeLayout
+                android:layout_width="125dp"
+                android:layout_height="25dp"
+                android:id="@+id/rl_search"
+                android:layout_toRightOf="@id/spinner_warehouse"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_rect_grey">
+
+                <ImageButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/icon_search"
+                    android:id="@+id/btn_search"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/btn_search"
+                    android:background="@color/transparent"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/hint_search"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:lines="1"
+                    android:layout_centerVertical="true"
+                    android:textSize="13dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/et_search"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/circle_white"
+                android:elevation="2dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/rl_icon_date">
+
+                <ImageButton
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/icon_date"
+                    android:id="@+id/ib_calendar"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <devs.mulham.horizontalcalendar.HorizontalCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textColorNormal="@color/black"
+            app:textColorSelected="@color/black"
+            android:background="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/ib_calendar"
+            android:elevation="0dp"
+            app:selectorColor="@color/transparent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:id="@+id/ll_buttons"
+        android:layout_below="@+id/ll_calendar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:background="@drawable/rounded_rect_dark_orange"
+            android:textColor="@color/white"
+            android:text="All"
+            android:gravity="center"
+            android:id="@+id/tv_all"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_rect_light_orange"
+            android:textColor="@color/dark_orange"
+            android:layout_marginLeft="25dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Assigned"
+            android:gravity="center"
+            android:id="@+id/tv_assigned"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_rect_light_orange"
+            android:textColor="@color/dark_orange"
+            android:layout_marginLeft="25dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Un-assigned"
+            android:gravity="center"
+            android:id="@+id/tv_unassigned"/>
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/ll_buttons"
+        android:id="@+id/swipe_refresh_transactions">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rv_transactions">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/icon_error"
+        android:layout_below="@+id/ll_buttons"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:id="@+id/iv_no_data"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:backgroundTint="@color/powder_blue"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_plus"
+        android:layout_margin="16dp" />
+
+</RelativeLayout>
