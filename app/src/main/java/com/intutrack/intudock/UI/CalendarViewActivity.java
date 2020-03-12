@@ -48,6 +48,7 @@ public class CalendarViewActivity extends BaseActivity implements OnItemClickLis
 
         tableViewDocks = findViewById(R.id.tableLayout);
 
+        //get data from previous activity
         date = getIntent().getExtras().getString("date");
         warehouseId = getIntent().getExtras().getString("warehouseId");
 
@@ -57,12 +58,11 @@ public class CalendarViewActivity extends BaseActivity implements OnItemClickLis
             @Override
             public void onReceiveResponse(DocksModel response) {
 
-                Log.e("CalendarAct", "DATE: " + date);
-
                 docksList.addAll(response.getResult());
 
                 Calendar calendar = Calendar.getInstance();
 
+                //splitting the date to fit year, month and date accordingly
                 calendar.set(Calendar.YEAR, Integer.parseInt(date.substring(0,4)));
                 calendar.set(Calendar.MONTH, Integer.parseInt(date.substring(5,7)));
                 calendar.set(Calendar.DATE, Integer.parseInt(date.substring(8,10)));

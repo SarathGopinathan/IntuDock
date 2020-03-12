@@ -17,7 +17,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.intutrack.intudock.Models.NavigationModel;
 import com.intutrack.intudock.Models.SlotsData.SlotsModel;
 import com.intutrack.intudock.R;
-import com.intutrack.intudock.UI.SelectTransactionActivity;
 import com.intutrack.intudock.Utilities.CommonUtils;
 
 import java.util.ArrayList;

@@ -10,6 +10,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.intutrack.intudock.Models.AddTransaction.AddTransactionRequest;
 import com.intutrack.intudock.Models.AddTransaction.AddTransactionResponse;
+import com.intutrack.intudock.Models.AnalyticsData.AnalyticsModel;
 import com.intutrack.intudock.Models.AssignSlotToTransaction.AssignSlotToTransactionModel;
 import com.intutrack.intudock.Models.AssignSlotToTransaction.AssignSlotToTransactionRequest;
 import com.intutrack.intudock.Models.CancelTransaction.CancelTransactionResponse;
@@ -101,10 +102,48 @@ public class APIUtility {
         });
     }
 
+    public void AnalyticsData(final Context context, final boolean isDialog, String startDate, String endDate, final APIResponseListener<AnalyticsModel> listener) {
+        showDialog(context, isDialog);
+
+//        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/warehouses/pagedata?date=" + date;
+        String url = "";
+
+        mApiService.AnalyticsData(url).enqueue(new Callback<AnalyticsModel>() {
+            @Override
+            public void onResponse(Call<AnalyticsModel> call, Response<AnalyticsModel> response) {
+                dismissDialog(isDialog);
+                if (response.isSuccessful()) {
+                    if (response.body().isStatus()) {
+                        listener.onReceiveResponse(response.body());
+                    } else {
+                        CommonUtils.alert(context, response.body().getMessage());
+                    }
+                } else {
+                    if (response.code() == 403)
+                        LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(Constants.ACTION_LOGOUT));
+                    else{
+                        try {
+                            displayErrorMessage(response.errorBody().string(), context);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AnalyticsModel> call, Throwable t) {
+                dismissDialog(isDialog);
+                CommonUtils.alert(context, context.getString(R.string.error));
+//                CommonUtils.alert(context, t.getMessage());
+            }
+        });
+    }
+
     public void WarehouseData(final Context context, final boolean isDialog, String date, final APIResponseListener<WarehouseModel> listener) {
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/warehouses/pagedata?date=" + date;
+        String url = "url?date=" + date;
 
         mApiService.WarehouseData(url).enqueue(new Callback<WarehouseModel>() {
             @Override
@@ -141,7 +180,7 @@ public class APIUtility {
     public void DockData(final Context context, final boolean isDialog,String warehouseId, String date, final APIResponseListener<DocksModel> listener) {
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/docks/pagedata?warehouseId="+ warehouseId + "&date=" + date;
+        String url = "url?warehouseId="+ warehouseId + "&date=" + date;
 
         mApiService.DockData(url).enqueue(new Callback<DocksModel>() {
             @Override
@@ -179,7 +218,7 @@ public class APIUtility {
 
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/transactions?warehouseId="+ warehouseId;
+        String url = "url?warehouseId="+ warehouseId;
 
         mApiService.TransactionData(url).enqueue(new Callback<TransactionsModel>() {
             @Override
@@ -253,7 +292,7 @@ public class APIUtility {
 
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/docks/slots?id=" + dockId + "&date=" + date;
+        String url = "url?id=" + dockId + "&date=" + date;
 
         mApiService.SlotData(url).enqueue(new Callback<SlotModel>() {
             @Override
@@ -292,7 +331,7 @@ public class APIUtility {
 
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/transactions/assign/" + transactionId;
+        String url = "url" + transactionId;
 
         mApiService.AssignSlotToTransaction(url, request).enqueue(new Callback<AssignSlotToTransactionModel>() {
             @Override
@@ -330,7 +369,7 @@ public class APIUtility {
 
         showDialog(context, isDialog);
 
-        String url = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/transactions/unassign/" + transactionId;
+        String url = "url" + transactionId;
 
         mApiService.CancelTransaction(url).enqueue(new Callback<CancelTransactionResponse>() {
             @Override

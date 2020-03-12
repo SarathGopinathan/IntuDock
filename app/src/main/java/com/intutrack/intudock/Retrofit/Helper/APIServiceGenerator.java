@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIServiceGenerator {
 
-    public static final String API_BASE_URL = "https://6mwou5x4fk.execute-api.ap-south-1.amazonaws.com/dev/";
+    public static final String API_BASE_URL = "base url";
     private static String BASE_URL;
     private static HashMap<String, String> headers = new HashMap<>();
     private static OkHttpClient.Builder httpClient = new OkHttpClient.Builder();

@@ -56,7 +56,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Week"
+                        android:text="Last 7 days"
                         android:layout_centerInParent="true"
                         android:id="@+id/tv_last_week"
                         android:layout_marginLeft="5dp"
@@ -78,7 +78,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Month"
+                        android:text="Last 30 days"
                         android:layout_centerInParent="true"
                         android:id="@+id/tv_last_month"
                         android:layout_marginLeft="5dp"
@@ -143,7 +143,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="21-08-2019"
                         android:id="@+id/tv_from_date"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -178,7 +177,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="21-08-2019"
                         android:id="@+id/tv_to_date"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -237,7 +235,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="40"
                         android:id="@+id/tv_total_transactions"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
@@ -271,7 +268,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20"
                             android:id="@+id/tv_completed"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -282,7 +278,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="75 %"
                             android:id="@+id/tv_completed_percent"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -309,7 +304,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10"
                             android:id="@+id/tv_upcoming"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -320,7 +314,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="25 %"
                             android:id="@+id/tv_upcoming_percent"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -368,7 +361,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="05"
                             android:id="@+id/tv_total_docks"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -388,7 +380,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Upcoming"
+                            android:text="Unoccupied"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:textSize="@dimen/tv_icon_text_small"
@@ -397,7 +389,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="01"
                             android:id="@+id/tv_unoccupied"
                             android:layout_marginTop="12dp"
                             android:layout_marginLeft="5dp"
@@ -429,7 +420,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="04"
                             android:layout_marginTop="12dp"
                             android:id="@+id/tv_occupied"
                             android:layout_marginLeft="5dp"
@@ -467,7 +457,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="D-01"
                             android:id="@+id/tv_most_used"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -494,7 +483,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="D-11"
                             android:id="@+id/tv_least_used"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -522,7 +510,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="40 %"
                             android:id="@+id/tv_total_utilization"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -628,8 +615,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3 pm - 4 pm"
-                                android:id="@+id/peak_hour_time"
+                                android:id="@+id/tv_peak_hour_time"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="@dimen/tv_total_docks"
@@ -639,8 +625,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="300 (50%)"
-                                android:id="@+id/peak_hour_value"
+                                android:id="@+id/tv_peak_hour_value"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="@dimen/tv_icon_text_small"
@@ -684,8 +669,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3 pm - 4 pm"
-                                android:id="@+id/offpeak_hour_time"
+                                android:id="@+id/tv_offpeak_hour_time"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="@dimen/tv_total_docks"
@@ -695,8 +679,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="30 (10%)"
-                                android:id="@+id/offpeak_hour_value"
+                                android:id="@+id/tv_offpeak_hour_value"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="@dimen/tv_icon_text_small"
@@ -742,7 +725,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="30 mins"
                         android:layout_marginTop="20dp"
                         android:id="@+id/tv_avg_loading_time"
                         android:layout_marginLeft="5dp"
@@ -767,7 +749,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10 %"
                             android:id="@+id/tv_avg_loading_time_percent"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -799,7 +780,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="40 mins"
                         android:layout_marginTop="20dp"
                         android:id="@+id/tv_avg_unloading_time"
                         android:layout_marginLeft="5dp"
@@ -824,7 +804,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10 %"
                             android:id="@+id/tv_avg_unloading_time_percent"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
@@ -856,7 +835,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="35 mins"
                         android:layout_marginTop="10dp"
                         android:id="@+id/tv_avg_activity_time"
                         android:layout_marginLeft="5dp"
@@ -881,7 +859,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10 %"
                             android:id="@+id/tv_avg_activity_time_percent"
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"

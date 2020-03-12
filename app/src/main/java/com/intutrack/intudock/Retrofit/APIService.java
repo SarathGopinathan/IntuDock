@@ -1,6 +1,7 @@
 package com.intutrack.intudock.Retrofit;
 import com.intutrack.intudock.Models.AddTransaction.AddTransactionRequest;
 import com.intutrack.intudock.Models.AddTransaction.AddTransactionResponse;
+import com.intutrack.intudock.Models.AnalyticsData.AnalyticsModel;
 import com.intutrack.intudock.Models.AssignSlotToTransaction.AssignSlotToTransactionModel;
 import com.intutrack.intudock.Models.AssignSlotToTransaction.AssignSlotToTransactionRequest;
 import com.intutrack.intudock.Models.CancelTransaction.CancelTransactionResponse;
@@ -26,6 +27,9 @@ public interface APIService {
 
     @POST("login")
     Call<LoginResponse> Login(@Body LoginRequest request);
+
+    @GET
+    Call<AnalyticsModel> AnalyticsData(@Url String url);
 
     @GET
     Call<WarehouseModel> WarehouseData(@Url String url);
